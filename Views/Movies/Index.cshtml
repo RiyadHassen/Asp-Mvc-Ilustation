@@ -10,22 +10,26 @@
     
     <button type="button" class="btn btn-outline-success"> <a asp-action="Create">Create New</a>></button>
 </p>
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="~/movie.jpg" alt="Card image cap">
+<div class="card-deck">
     @foreach (var item in Model)
     {
- 
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">  <strong>@Html.DisplayNameFor(model => model.Title) </strong>     @Html.DisplayFor(modelItem => item.Title)</li>
-            <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.ReleaseDate) </strong>@Html.DisplayFor(modelItem => item.ReleaseDate)</li>
-            <li class="list-group-item"> <strong>@Html.DisplayNameFor(model => model.Genre) </strong>@Html.DisplayFor(modelItem => item.Genre)</li>
-            <li class="list-group-item"> <strong>@Html.DisplayNameFor(model => model.Price) </strong> @Html.DisplayFor(modelItem => item.Price)</li>
-        </ul>
-        <div class="card-body">
-            <button type="button" class="btn btn-outline-warning"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
-            <button type="button" class="btn btn-outline-dark"> <a asp-action="Details" asp-route-id="@item.Id">Details</a> </button>
-            <button type="button" class="btn btn-outline-danger">  <a asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
-           
+        <div class="card">
+
+            <img class="card-img-top" src="~/movie.jpg" alt="Card image cap">
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">  <strong>@Html.DisplayNameFor(model => model.Title) </strong>     @Html.DisplayFor(modelItem => item.Title)</li>
+                <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.ReleaseDate) </strong>@Html.DisplayFor(modelItem => item.ReleaseDate)</li>
+                <li class="list-group-item"> <strong>@Html.DisplayNameFor(model => model.Genre) </strong>@Html.DisplayFor(modelItem => item.Genre)</li>
+                <li class="list-group-item"> <strong>@Html.DisplayNameFor(model => model.Price) </strong> @Html.DisplayFor(modelItem => item.Price)</li>
+            </ul>
+            <div class="card-body">
+                <button type="button" class="btn btn-outline-warning"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
+                <button type="button" class="btn btn-outline-dark"> <a asp-action="Details" asp-route-id="@item.Id">Details</a> </button>
+                <button type="button" class="btn btn-outline-danger">  <a asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+
+
+            </div>
 
         </div>
     }
